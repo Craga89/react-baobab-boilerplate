@@ -2,15 +2,19 @@ import React from 'react';
 import AppWrapper from './AppWrapper.jsx';
 import store from './store';
 import actions from './actions/index';
-import io from 'socket.io';
 
-let App = React.render(<AppWrapper store={store} actions={actions}/>, document.body);
+// Initialize Socket.IO
+import './io';
 
-var socket = io.connect(window.location.origin);
+// Render the AppWrapper directly on the `document.body`
+let App = React.render(
+	<AppWrapper store={store} actions={actions}/>,
+	document.body
+);
 
-if(__DEV__) {
+// Expose various parts in DEBUG mode
+if(__DEBUG__) {
 	window.APP = App;
 	window.STORE = store;
 	window.ACTIONS = actions;
-	window.SOCKET = socket;
 }

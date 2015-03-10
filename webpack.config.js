@@ -18,7 +18,7 @@ var IMAGE_INLINE_LIMIT = 10000; // Maximum imagefilesize (in bytes) to inline
 // to be `require`d
 var GLOBALS = {
 	'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
-	'__DEV__': DEBUG
+	'__DEBUG__': DEBUG
 };
 
 

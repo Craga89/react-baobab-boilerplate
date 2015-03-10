@@ -20,5 +20,8 @@
 		"no-underscore-dangle": [0],
 		"no-unused-vars": 1,
 		"strict": false
+	},
+	"globals": {
+		"__DEBUG__": true
 	}
 }
