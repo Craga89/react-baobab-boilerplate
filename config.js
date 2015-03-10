@@ -1,8 +1,10 @@
 import path from 'path';
 
-// Host and port
+// Host port, and base URL
 export let host = 'localhost';
 export let port = 3000;
+export let baseUrl = '/';
+
 
 // Paths
 let basePath = path.resolve(__dirname);
@@ -15,21 +17,29 @@ export let paths = {
 	build: path.join(basePath, 'build')
 };
 
+
 // Webpack Server
 export let webpackServer = {
 	port: port + 80,
 	contentBase: path.join(basePath, 'build'),
 	hot: true,
-	quiet: false,
-	noInfo: true,
-	publicPath: '/',
+	quiet: true,
+	noInfo: false,
+	publicPath: baseUrl,
 	stats: {
 		colors: true
 	},
 	historyApiFallback: true
 };
 
+
 // Socket.IO Server
 export let ioServer = {
+
+};
+
+
+// Logging configuration
+export let logging = {
 
 };
