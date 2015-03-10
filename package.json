@@ -1,0 +1,49 @@
+{
+  "name": "react-baobab-boilerplate",
+  "version": "1.0.0",
+  "description": "React+Baobab boilerplate for creating isomorphic web applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony .bin/server",
+    "build": "webpack --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/craga89/react-baobab-boilerplate.git"
+  },
+  "author": "Craig Michael Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craga89/react-baobab-boilerplate/issues"
+  },
+  "homepage": "https://github.com/craga89/react-baobab-boilerplate",
+  "dependencies": {
+    "babel": "^4.7.7",
+    "babel-core": "^4.7.7",
+    "babel-eslint": "^2.0.0",
+    "babel-loader": "^4.1.0",
+    "babel-runtime": "^4.7.7",
+    "baobab": "^0.3.2",
+    "css-loader": "^0.9.1",
+    "eslint": "^0.11.0",
+    "file-loader": "^0.8.1",
+    "jshint": "^2.6.3",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.12.2",
+    "koa": "^0.18.1",
+    "koa-proxy": "^0.2.0",
+    "koa-router": "^4.2.0",
+    "less": "^2.4.0",
+    "less-loader": "^2.1.0",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.2",
+    "react-hot-loader": "^1.2.1",
+    "socket.io": "^1.3.5",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.6.0",
+    "webpack-dev-server": "^1.7.0",
+    "yargs": "^3.5.3"
+  }
+}
