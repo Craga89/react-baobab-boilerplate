@@ -26,3 +26,15 @@ Read the article at: [True isomorphic apps with React and Baobab](http://christi
 4. Go to `localhost:3000`
 
 Now edit on of the `app/` files, it'll update on-the-fly!
+
+
+## Production builds
+By default the `app` will start in `DEBUG` mode with all the `react-hot-loader` goodness. If you want to simply build the app up and serve it as it would be on a normal
+server environment, just pass ` --release` flag to `npm start` like so:
+
+```
+npm start -- --release
+```
+
+**Note: You must pass that additional `--` for `npm` to pass the arguments after it through to the underlying scripts!**
+
