@@ -15,6 +15,7 @@ Originally based off the excellent [isomorphic-react-baobab-example](https://git
 ## Requirements
 
 * [Node 0.11.x](http://github.com/visionmedia/n) or above
+* `--harmony` flag must be used when running manually i.e. `node --harmony index.js`
 
 ## Inspiration
 Read the article at: [True isomorphic apps with React and Baobab](http://christianalfoni.github.io/javascript/2015/03/01/true-isomorphic-apps-with-react-and-baobab.html).
