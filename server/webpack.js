@@ -1,14 +1,15 @@
+import * as config from '../config';
+import webpackConfig from '../webpack.config';
+
 import fs from 'fs';
 import path from 'path';
 import winston from 'winston';
 import koaProxy from 'koa-proxy';
+import koaStatic from 'koa-static';
 import {argv} from 'yargs';
 
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-
-import * as config from '../config';
-import webpackConfig from '../webpack.config';
 
 // Determine the DEBUG status
 const DEBUG = !argv.release;
@@ -41,8 +42,10 @@ export async function install(app) {
 		}));
 	}
 
-	// In production, we'll simply build once and continue
+	// In production, we'll simply build once and serve it
 	else {
+		app.use(koaStatic(config.paths.build));
+
 		return new Promise((resolve, reject) => {
 			winston.info('[webpack]', 'Building application...');
 
