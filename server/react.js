@@ -7,9 +7,7 @@ import store from '../store';
 import AppWrapper from '../app/AppWrapper.jsx';
 
 // Generate a React.Element factory using the AppWrapper
-let appFactory = React.createFactory(AppWrapper)({
-	store: store
-});
+let appFactory = React.createFactory(AppWrapper);
 
 // Installer method
 export function install(app) {
@@ -25,7 +23,9 @@ export function install(app) {
 
 		// ${APP} => Rendered application HTML
 		.replace('${APP}',
-			React.renderToString(appFactory, { store: store })
+			React.renderToString(
+				appFactory({ store: store.toJSON() })
+			)
 		)
 
 		// ${STORE} => JSONified Store

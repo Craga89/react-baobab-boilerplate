@@ -8,6 +8,7 @@ import koaRouter from 'koa-router';
 import * as webpack from './webpack';
 import * as react from './react';
 import * as io from './io';
+import * as components from './components/index';
 
 // Generate new Koa instance with middleware applied
 let app = koa();
@@ -17,6 +18,7 @@ app.use(koaRouter(app));
 Promise.all([
 	react.install(app),
 	webpack.install(app),
+	components.install(app)
 ])
 
 // Once installed, listen!

@@ -5,12 +5,21 @@ export default React.createClass({
 	mixins: [ContextMixin],
 
 	cursors: {
-		list: ['list']
+		usage: ['usage']
 	},
 
 	render() {
 		return (
-			<h1>Hello world</h1>
+			<div>
+				<h1>Server Statistics</h1>
+				<dl>
+					<dt>CPU Usage</dt>
+					<dd>{this.state.usage.cpu.toFixed(2)}%</dd>
+
+					<dt>Memory Usage</dt>
+					<dd>{(this.state.usage.memory / 1E6).toFixed(0)}MB</dd>
+				</dl>
+			</div>
 		);
 	}
 });
