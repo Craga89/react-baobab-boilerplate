@@ -8,7 +8,10 @@ var socket = io(window.location.origin);
 socket.on('store:update', ({ key, value }) => {
 	var cursor = store.select(key);
 
-	if(typeof value === 'object') {
+	if(value.push) {
+		cursor.edit(value);
+	}
+	else if(typeof value === 'object') {
 		cursor.merge(value);
 	}
 	else {
