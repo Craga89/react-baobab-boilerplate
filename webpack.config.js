@@ -49,7 +49,11 @@ exports.output = {
 // Plugins
 exports.plugins = [
 	new webpack.optimize.OccurenceOrderPlugin(),
-	new webpack.DefinePlugin(GLOBALS)
+	new webpack.DefinePlugin(GLOBALS),
+	new webpack.optimize.CommonsChunkPlugin({
+		name: 'common',
+		filename: 'common.js'
+	})
 ];
 
 if(DEBUG) {

@@ -1,0 +1,106 @@
+@graph__grid__bg--color: rgba(31, 119, 180, .02);
+@graph__grid__line--color: rgba(31, 119, 180, .1);
+@graph__grid__border--color: rgba(31, 119, 180, 0.8);
+@graph__grid__fill--color: fade(@graph__grid__border--color, 20%);
+@graph__grid__stroke--width: 1.25px;
+
+.usage{
+	&, & * {
+		box-sizing: border-box;
+	}
+}
+
+.usage__header{
+	margin-bottom: 15px;
+
+	.usage__cpu__graph{
+		float: left;
+		margin: 15px 15px 0 0;
+	}
+}
+
+.usage__cpu__stats{
+	float: right;
+	margin-top: 20px;
+
+	.dl-horizontal{
+		margin-bottom: 0;
+	}
+}
+
+.usage__cpu__graphs{
+	> small.pull-right{
+		margin-top: 5px;
+		margin-bottom: -5px;
+	}
+}
+
+.usage__cpu__graphs__container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+
+	.usage__cpu__graph{
+		width: calc(~"50vw - 100px");
+		margin: 10px;
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+}
+
+.usage__cpu__graph{
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+
+	> div{
+		display: inline-block;
+	}
+
+	svg{
+		overflow: hidden;
+
+		border: 1px solid @graph__grid__border--color;
+
+		background-clip: content-box;
+		background-size: 12% 12%;
+		background-color: transparent;
+		background-image: 
+			linear-gradient(
+				0deg,
+				@graph__grid__bg--color 24%,
+				@graph__grid__line--color 25%,
+				@graph__grid__line--color 26%,
+				@graph__grid__bg--color 27%,
+				@graph__grid__bg--color 74%,
+				@graph__grid__line--color 75%,
+				@graph__grid__line--color 76%,
+				@graph__grid__bg--color 77%,
+				@graph__grid__bg--color
+			),
+
+			linear-gradient(
+				90deg,
+				@graph__grid__bg--color 24%,
+				@graph__grid__line--color 25%,
+				@graph__grid__line--color 26%,
+				@graph__grid__bg--color 27%,
+				@graph__grid__bg--color 74%,
+				transparent 75%,
+				transparent 76%,
+				@graph__grid__bg--color 77%,
+				@graph__grid__bg--color
+			);
+	}
+
+	.area{
+		stroke-width: @graph__grid__stroke--width;
+		stroke: @graph__grid__border--color;
+		fill: @graph__grid__fill--color;
+	}
+
+	.axis{
+		display: none;
+	}
+}
